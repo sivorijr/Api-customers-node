@@ -6,7 +6,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(require("./routes"));
 
-mongoose.connect("mongodb+srv://root:root@cluster-testes-juzbh.gcp.mongodb.net/test?retryWrites=true&w=majority", {
+mongoose.connect("mongodb+srv://root:root@cluster-l4tpr.gcp.mongodb.net/test?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
