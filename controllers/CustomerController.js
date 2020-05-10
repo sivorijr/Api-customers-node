@@ -3,7 +3,7 @@ const Customer = require("../models/Customer");
 class CustomerController {
     async getAll(req, res) {
         const customers = await Customer.find().populate({
-            path: "files",
+            path: "data",
             options: { sort: { createdAt: -1 } }
         });
 
@@ -23,10 +23,7 @@ class CustomerController {
     }
 
     async get(req, res) {
-        const customer = await Customer.findById(req.params.id).populate({
-            path: "files",
-            options: { sort: { createdAt: -1 } }
-        });
+        const customer = await Customer.findById(req.params.id);
 
         return res.json(customer);
     }

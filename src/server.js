@@ -15,4 +15,4 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(require("./routes"));
 
-app.listen(process.env.PORT || 3333);
+app.listen(process.env.PORT || 4444);
