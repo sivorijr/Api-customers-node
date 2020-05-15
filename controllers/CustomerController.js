@@ -2,36 +2,52 @@ const Customer = require("../models/Customer");
 
 class CustomerController {
     async getAll(req, res) {
-        const customers = await Customer.find().populate({
-            path: "data",
-            options: { sort: { createdAt: -1 } }
-        });
+        try {
+            const customers = await Customer.find().populate({
+                path: "data",
+                options: { sort: { createdAt: -1 } }
+            });
 
-        return res.json(customers);
+            return res.json(customers);
+        } catch (err) {
+            next(err);
+        }
     }
 
     async set(req, res) {
-        var newCustomer = {
-            name: req.body.name,
-            age: req.body.age,
-            address: req.body.address
+        try {
+            var newCustomer = {
+                name: req.body.name,
+                age: req.body.age,
+                address: req.body.address
+            }
+
+            const customer = await Customer.create(newCustomer);
+
+            return res.json(customer);
+        } catch (err) {
+            next(err);
         }
-
-        const customer = await Customer.create(newCustomer);
-
-        return res.json(customer);
     }
 
     async get(req, res) {
-        const customer = await Customer.findById(req.params.id);
+        try {
+            const customer = await Customer.findById(req.params.id);
 
-        return res.json(customer);
+            return res.json(customer);
+        } catch (err) {
+            next(err);
+        }
     }
 
     async delete(req, res) {
-        await Customer.findByIdAndDelete(req.params.id);
+        try {
+            await Customer.findByIdAndDelete(req.params.id);
 
-        return res.send("Customer deleted with success");
+            return res.send("Customer deleted with success");
+        } catch (err) {
+            next(err);
+        }
     }
 }
 
