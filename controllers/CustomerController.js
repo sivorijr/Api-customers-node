@@ -10,7 +10,7 @@ class CustomerController {
 
             return res.json(customers);
         } catch (err) {
-            next(err);
+            throw err;
         }
     }
 
@@ -26,7 +26,7 @@ class CustomerController {
 
             return res.json(customer);
         } catch (err) {
-            next(err);
+            throw err;
         }
     }
 
@@ -36,7 +36,7 @@ class CustomerController {
 
             return res.json(customer);
         } catch (err) {
-            next(err);
+            throw err;
         }
     }
 
@@ -46,7 +46,7 @@ class CustomerController {
 
             return res.send("Customer deleted with success");
         } catch (err) {
-            next(err);
+            throw err;
         }
     }
 }
