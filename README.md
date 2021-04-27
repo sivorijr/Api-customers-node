@@ -1,5 +1,9 @@
 # Customers API
- 
+
+## Related APIs
+https://github.com/sivorijr/Api-books-node<br>
+https://github.com/sivorijr/Api-orders-node
+
 ## Technology 
  
 * Node.js
