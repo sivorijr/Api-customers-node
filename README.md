@@ -2,8 +2,6 @@
  
 ## Technology 
  
-Here are the technologies used in this project.
- 
 * Node.js
  
  
