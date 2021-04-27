@@ -21,17 +21,17 @@ DELETE - "/customer/:id" - Delete customer of specific id<br>
 
 POST - "/customer" - Create new customer<br>
 customer = {<br>
-&emsp;name: {
-&emsp;&emsp;type: String,
-&emsp;&emsp;require: true
+&emsp;name: {<br>
+&emsp;&emsp;type: String,<br>
+&emsp;&emsp;require: true<br>
 &emsp;},<br>
-&emsp;age: {
-&emsp;&emsp;type: Number,
-&emsp;&emsp;require: true
+&emsp;age: {<br>
+&emsp;&emsp;type: Number,<br>
+&emsp;&emsp;require: true<br>
 &emsp;},<br>
-&emsp;address: {
-&emsp;&emsp;type: String,
-&emsp;&emsp;require: false
+&emsp;address: {<br>
+&emsp;&emsp;type: String,<br>
+&emsp;&emsp;require: false<br>
 &emsp;}<br>
 }
  
